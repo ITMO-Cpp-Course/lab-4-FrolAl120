@@ -58,7 +58,6 @@ TEST_CASE("Open and close", "[FileHandle]")
 {
     const std::string name = "test.txt";
     createFile(name);
-
     FileHandle f;
     REQUIRE(f.is_open() == false);
 
