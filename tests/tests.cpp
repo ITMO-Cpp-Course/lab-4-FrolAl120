@@ -126,9 +126,11 @@ TEST_CASE("Cashe", "[ResourceManager]")
     createFile(name);
     ResourceManager manager;
     void* address = nullptr;
+    std::weak_ptr<FileHandle> weak;
     {
         auto p1 = manager.getResource(name, "r");
         address = p1.get();
+        weak = p1;
     }
     auto p2 = manager.getResource(name, "r");
     REQUIRE(p2.get() != address);

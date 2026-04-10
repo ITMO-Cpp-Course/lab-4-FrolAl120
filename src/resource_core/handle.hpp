@@ -5,6 +5,7 @@ namespace lab4::resource
 {
 class FileHandle
 {
+  private:
     FILE* file_;
 
   public:
